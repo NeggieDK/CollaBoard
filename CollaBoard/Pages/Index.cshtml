@@ -1,0 +1,40 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to CollaBoard!</h1>
+    <h3>The best way to brainstorm, collaborate with your team!</h3>
+    <h2>Start by creating a room:</h2>
+    <form method="post">
+        <div asp-validation-summary="All"></div>
+        <div>
+            <label asp-for="Room.Name"></label>
+            <div>
+                <input asp-for="Room.Name" />
+                <span asp-validation-for="Room.Name"></span>
+            </div>
+        </div>
+        <div>
+            <label asp-for="Room.MaxParticipants"></label>
+            <div>
+                <input asp-for="Room.MaxParticipants" />
+                <span asp-validation-for="Room.MaxParticipants"></span>
+            </div>
+        </div>
+        <div>
+            <label asp-for="Room.TimeAlive"></label>
+            <div>
+                <select asp-for="Room.TimeAlive" asp-items="Html.GetEnumSelectList<CollaBoard.Core.Models.RoomHoursAlive>()">
+
+                </select>
+                <span asp-validation-for="Room.TimeAlive"></span>
+            </div>
+        </div>
+        <div>
+            <button class="btn btn-primary" type="submit">Save</button>
+        </div>
+    </form>
+</div>
