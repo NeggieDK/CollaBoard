@@ -8,7 +8,7 @@ namespace CollaBoard.DAL.Mongo
         private readonly IMongoDatabase _mongoDatabase;
         public MongoDbConnection()
         {
-            _mongoClient = new MongoClient("mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass%20Community&ssl=false");
+            _mongoClient = new MongoClient("");
             _mongoDatabase = _mongoClient.GetDatabase("CollaBoard");
         }
 
